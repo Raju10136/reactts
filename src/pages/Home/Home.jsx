@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { useSiteContext } from '../../contexts/SiteProvider';
-import Cards from './Card';
+import Cards from './PdfCard';
 
 const Home=()=>{
     const {setLoading} = useSiteContext();

@@ -1,5 +1,9 @@
 import React from 'react';
-const Header = ({ children }) => {
+import { Link} from 'react-router-dom';
+const Header = ({ user,handleLogout}) => {
+
+
+
   return (
    
 <nav className="navbar" role="navigation" aria-label="main navigation">
@@ -40,12 +44,12 @@ const Header = ({ children }) => {
     </div>
     <div className="navbar-end">
       <div className="navbar-item">
-        <div className="buttons">
-          <a className="button is-primary">
-            <strong>Sign up</strong>
-          </a>
-          <a className="button is-light">Log in</a>
+       {!user &&  <div className="buttons">  
+          <Link className="button is-light" to="/login">Login </Link>       
+         
         </div>
+       }
+       {user && <div>{user?.email}  <a onClick={()=>handleLogout()} className="button is-light">Log out</a> </div>}
       </div>
     </div>
   </div>

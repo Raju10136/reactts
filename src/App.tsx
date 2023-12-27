@@ -4,6 +4,7 @@ import 'bulma/css/bulma.min.css'; // Import Bulma CSS
 import './App.css';
 import SiteRoute from './routing/SiteRoute';
 import { SiteProvider } from './contexts/SiteProvider';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
@@ -11,6 +12,8 @@ function App() {
       <div className="App">
         <SiteRoute />
       </div>
+      {/* ToastContainer is placed at a high level */}
+      
     </SiteProvider>
   );
 }
