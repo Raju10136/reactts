@@ -1,0 +1,10 @@
+.smart-modal .modal-card-head {
+    padding: 0.5em;
+    background: rgb(2, 15, 90);   
+}
+.smart-modal .modal-card-title{
+    color:white;
+}
+.smart-modal .modal-card-foot{
+    padding:0.5em;
+}

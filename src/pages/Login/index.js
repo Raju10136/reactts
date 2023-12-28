@@ -4,8 +4,10 @@ import { useSiteContext } from '../../contexts/SiteProvider';
 import { post } from '../../services/smartApiService';
 import { useNavigate } from 'react-router-dom';
 
+
+
 const Login=()=>{
-    const {setLoading,user,setUser} = useSiteContext();
+    const {setLoading,user,setUser,openModal,closeModal} = useSiteContext();
     const navigate = useNavigate();
 
     const handleLogin=()=>{
@@ -22,8 +24,31 @@ const Login=()=>{
       };
     }
 
+    const MyFooterContent=()=>{
+      return (
+        <div>
+          <button class="button is-success is-small">Save changes</button>
+      <button class="button is-small" onClick={closeModal}>Cancel</button>
+        </div>
+      )
+    }
+
+    const MyModalContent=()=>{
+      return (
+        <div>
+          <p> This is everthing ever </p>
+        </div>
+      )
+    }
+
+    const openMyModal = () => {
+      let modalObject = {title:"login password",body:<MyModalContent />,footer:<MyFooterContent />}
+      openModal(modalObject);
+    };
+
     return (
         <div className="hero is-fullheight">
+         <button onClick={openMyModal}>Open Modal</button>
         <div className="hero-body is-justify-content-center is-align-items-center">
           <div className="columns is-flex is-flex-direction-column box">
             <div className="column">

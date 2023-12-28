@@ -11,9 +11,7 @@ function App() {
     <SiteProvider>
       <div className="App">
         <SiteRoute />
-      </div>
-      {/* ToastContainer is placed at a high level */}
-      
+      </div>     
     </SiteProvider>
   );
 }
